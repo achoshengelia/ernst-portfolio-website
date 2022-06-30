@@ -5724,6 +5724,13 @@ gatsby-plugin-portal@^1.0.7:
   dependencies:
     "@babel/runtime" "^7.3.1"
 
+gatsby-plugin-react-helmet@^5.17.0:
+  version "5.17.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-5.17.0.tgz#0d092eb8771aadcf27d8a0f0b4363a9c449cc812"
+  integrity sha512-Lp52GFGNQO0Rt0VfYbFMFBw67XNaIITvwhBMqzxnIw/OCnnyjhylfYMpmyDQKT5S/yaWEF3MsvPmE2YCbXbSww==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+
 gatsby-plugin-react-i18next@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-i18next/-/gatsby-plugin-react-i18next-2.0.1.tgz#fe3532200d9fe355b4b90b3bd8618aa2164e0cba"

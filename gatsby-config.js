@@ -5,15 +5,19 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Dr. Ernst Sebastian Gassebner`,
-    description: `A portfolio website of Ernst Gassebner.`,
-    person: { name: 'john', age: 24 },
-    simpleData: ['1', '2'],
-    complexData: [
-      { name: 'gela', age: 54 },
-      { name: 'mela', age: 14 },
-      { name: 'ggg', age: 154 }
-    ]
+    title: `Dr. Ernst Gassebner`,
+    description: `Verlässliche, umfangreiche & professionelle Gutachten, Schätzungen und Fachberatungen mit Schwerpunkt  Obst- und Weinbau.`,
+    keywords: [
+      `Agronom`,
+      `Südtirol`,
+      `Schätzungsgutachten`,
+      `GlobalGap`,
+      `Vorbereitung`,
+      `Obstbau`,
+      `Weinbau`,
+      `Beratung`
+    ],
+    author: `Dr. Ernst Sebastian Gassebner`
   },
   plugins: [
     {
@@ -53,6 +57,7 @@ module.exports = {
       options: {
         localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
         languages: [`de`, `it`],
+        siteUrl: `https://ernstgassebner.com`,
         defaultLanguage: `de`,
         fallbackLanguage: `de`,
         prefixDefault: false,
@@ -75,6 +80,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-transformer-json`
+    `gatsby-transformer-json`,
+    `gatsby-plugin-react-helmet`
   ]
 };

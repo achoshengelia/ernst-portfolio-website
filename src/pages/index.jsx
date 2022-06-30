@@ -5,10 +5,12 @@ import Work from 'components/Work/Work';
 import Projects from 'components/Projects/Projects';
 import About from 'components/About/About';
 import Contact from 'components/Contact/Contact';
+import SEO from 'components/SEO/SEO';
 
 const HomePage = () => {
   return (
     <Layout>
+      <SEO />
       <Work />
       <Projects />
       <About />
