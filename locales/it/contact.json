@@ -1,0 +1,23 @@
+{
+  "heading": "Contatto",
+  "paragraph": "Siete sempre invitati a porre le vostre domande di persona nei giorni lavorativi!",
+  "form": {
+    "nameField": "Nome / organizzazione *",
+    "emailField": "E-mail *",
+    "phoneField": "Numero di telefono",
+    "messageField": "Messaggio *",
+    "agreement": "Acconsento che questo sito web memorizzi le informazioni da me inviate in modo che la mia richiesta possa essere soddisfatta. *",
+    "required": "* campo obbligatorio",
+    "sendButton": "invia",
+    "sentButton": "inviato",
+    "errors": {
+      "isRequired": "Dieses Feld ist erforderlich!",
+      "minLength": "Dieses Feld muss mindestens {{minLength}} Zeichen lang sein",
+      "maxLength": "Dieses Feld darf maximal {{maxLength}} Zeichen lang sein",
+      "checkLatin": "Bitte geben sie ausschließlich lateinische Buchstaben (a-z) ein",
+      "checkPhone": "Please enter a valid phone number!",
+      "email": "Bitte geben Sie eine gültige Email-Adresse ein!",
+      "mustAgree": "Um fortzufahren, müssen Sie den Bedingungen zustimmen"
+    }
+  }
+}

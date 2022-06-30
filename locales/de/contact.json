@@ -1,0 +1,23 @@
+{
+  "heading": "Kontakt",
+  "paragraph": "Sie können Ihre Fragen an Werktagen jederzeit gerne im persönlichen Gespräch stellen!",
+  "form": {
+    "nameField": "Name / Organisation *",
+    "emailField": "E-mail *",
+    "phoneField": "Telefonnummer",
+    "messageField": "Nachricht *",
+    "agreement": "Ich willige ein, dass diese Website meine übermittelten Informationen speichert, sodass meine Anfrage beantwortet werden kann. *",
+    "required": "* Pflichtfeld",
+    "sendButton": "senden",
+    "sentButton": "gesendet",
+    "errors": {
+      "isRequired": "Dieses Feld ist erforderlich!",
+      "minLength": "Dieses Feld muss mindestens {{minLength}} Zeichen lang sein",
+      "maxLength": "Dieses Feld darf maximal {{maxLength}} Zeichen lang sein",
+      "checkLatin": "Bitte geben sie ausschließlich lateinische Buchstaben (a-z) ein",
+      "checkPhone": "Please enter a valid phone number!",
+      "email": "Bitte geben Sie eine gültige Email-Adresse ein!",
+      "mustAgree": "Um fortzufahren, müssen Sie den Bedingungen zustimmen"
+    }
+  }
+}
