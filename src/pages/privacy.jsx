@@ -1,18 +1,17 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { useTranslation } from 'react-i18next';
-import Layout from 'components/Layout/Layout';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 import Privacy from 'components/Privacy/Privacy';
-import SEO from 'components/SEO/SEO';
+import Seo from 'components/SEO/SEO';
 
 const PrivacyPage = () => {
   const { t } = useTranslation('privacy');
 
   return (
-    <Layout>
-      <SEO title={t('heading')} />
+    <>
+      <Seo title={t('heading')} />
       <Privacy />
-    </Layout>
+    </>
   );
 };
 

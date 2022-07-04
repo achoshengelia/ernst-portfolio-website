@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { CenterWrapperStyled } from 'components/Global';
 import { emailAddress, phoneNumber } from 'constants/global';
 import { imprintItems } from 'constants/imprint';
-import { CenterWrapperStyled } from '../../styles/utils';
 import {
   ContainerStyled,
   MainHeadingStyled,

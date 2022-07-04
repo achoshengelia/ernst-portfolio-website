@@ -1,8 +1,8 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { StaticImage } from 'gatsby-plugin-image';
 import References from 'components/About/References/References';
-import { CenterWrapperStyled } from '../../styles/utils';
+import { CenterWrapperStyled } from 'components/Global';
 import {
   ContainerStyled,
   ImageWrapperStyled,

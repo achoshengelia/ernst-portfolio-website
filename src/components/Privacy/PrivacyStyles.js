@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { pxToEm } from 'utils/fns';
-import { HeadingStyled, Text } from '../../styles/utils';
+import { HeadingStyled, TextStyled } from 'components/Global';
 
-export const ParagraphStyled = styled(Text)`
+export const ParagraphStyled = styled(TextStyled)`
   margin: 4rem 2rem 0 0;
   line-height: 24px;
 

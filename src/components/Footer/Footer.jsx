@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby-plugin-react-i18next';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { CenterWrapperStyled } from 'components/Global';
 import { footerItems } from 'constants/footer';
-import { slugify } from 'utils/fns';
-import { CenterWrapperStyled } from '../../styles/utils';
+import { slugify, scrollTo } from 'utils/fns';
 import {
   ArrowWrapperStyled,
   ContainerStyled,
@@ -28,12 +28,13 @@ const Footer = () => {
             {footerItems.map((item, i) =>
               i === 0 ? null : (
                 <FooterListItemStyled key={item}>
-                  <Link to={isScrollTop(i) ? '' : `/${slugify(item)}`}>
-                    {isScrollTop(i) ? (
-                      <ArrowWrapperStyled>↑</ArrowWrapperStyled>
-                    ) : null}{' '}
-                    {t(item)}
-                  </Link>
+                  {isScrollTop(i) ? (
+                    <Link to="/" onClick={scrollTo}>
+                      <ArrowWrapperStyled>↑</ArrowWrapperStyled> {t(item)}
+                    </Link>
+                  ) : (
+                    <Link to={`/${slugify(item)}`}>{t(item)}</Link>
+                  )}
                 </FooterListItemStyled>
               )
             )}

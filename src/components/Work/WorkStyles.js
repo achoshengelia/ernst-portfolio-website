@@ -1,6 +1,6 @@
 import styled from 'styled-components';
+import { HeadingStyled } from 'components/Global';
 import { pxToEm } from 'utils/fns';
-import { HeadingStyled } from '../../styles/utils';
 
 export const MainHeadingStyled = styled(HeadingStyled)`
   margin-bottom: 5rem;

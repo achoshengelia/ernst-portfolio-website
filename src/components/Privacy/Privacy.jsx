@@ -1,6 +1,6 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { CenterWrapperStyled } from '../../styles/utils';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { CenterWrapperStyled } from 'components/Global';
 import {
   MainHeadingStyled,
   SubHeadingStyled,

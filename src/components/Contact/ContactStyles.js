@@ -1,6 +1,6 @@
 import styled from 'styled-components';
+import { CenterWrapperStyled } from 'components/Global';
 import { pxToEm } from 'utils/fns';
-import { CenterWrapperStyled } from '../../styles/utils';
 
 export const ContainerStyled = styled.section`
   margin-top: auto;

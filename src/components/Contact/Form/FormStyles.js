@@ -1,59 +1,8 @@
 import styled from 'styled-components';
 import { Form, Field } from 'formik';
+import { ButtonStyled } from 'components/Global';
 import { pxToEm } from 'utils/fns';
-import { PopInAnimation } from '../../../styles/animations';
-
-export const ButtonStyled = styled.button`
-  background: transparent;
-  width: 100%;
-  max-width: 15rem;
-  max-height: 5rem;
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  border: 0.1rem solid ${props => props.theme.colors.background.form};
-  border-radius: 0.5rem;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-  transition: all 0.3s ease;
-  color: ${props => props.theme.colors.text.light};
-
-  &:active {
-    transform: scale(0.98);
-  }
-
-  &:hover {
-    color: ${props => props.theme.colors.primary.dark};
-
-    &::after {
-      left: 0;
-      width: 100%;
-    }
-  }
-
-  &::after {
-    position: absolute;
-    content: '';
-    width: 0;
-    height: 100%;
-    top: 0;
-    right: 0;
-    z-index: -1;
-    border-radius: 0.3rem;
-    background: ${props => props.theme.colors.background.form};
-    transition: all 0.3s ease;
-  }
-
-  @media only screen and (max-width: ${pxToEm(450)}) {
-    min-height: 5rem;
-    margin-bottom: 3rem;
-    font-size: 1.6rem;
-  }
-
-  @media only screen and (max-width: ${pxToEm(330)}) {
-    max-width: none;
-  }
-`;
+import { popIn } from '../../../styles/animations';
 
 export const ErrorMessageStyled = styled.div`
   padding-left: 2rem;
@@ -61,7 +10,7 @@ export const ErrorMessageStyled = styled.div`
   font-size: 1.2rem;
   color: ${props => props.theme.colors.response.error};
 
-  animation: ${PopInAnimation} 0.2s ease-in;
+  animation: ${popIn} 0.2s ease-in;
 `;
 
 export const LabelStyled = styled.label`
@@ -158,6 +107,19 @@ export const BottomWrapperStyled = styled.div`
   justify-content: space-between;
   margin: 3rem 0rem 0 0rem;
   color: ${props => props.theme.colors.text.light};
+
+  & > ${ButtonStyled} {
+    max-height: 5rem;
+
+    @media only screen and (max-width: ${pxToEm(450)}) {
+      margin-bottom: 3rem;
+      font-size: 1.6rem;
+    }
+
+    @media only screen and (max-width: ${pxToEm(330)}) {
+      max-width: none;
+    }
+  }
 
   & > ${FieldWrapperStyled} {
     display: flex;

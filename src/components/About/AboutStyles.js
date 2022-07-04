@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { pxToEm } from 'utils/fns';
-import { CenterWrapperStyled, HeadingStyled, Text } from '../../styles/utils';
+import {
+  CenterWrapperStyled,
+  HeadingStyled,
+  TextStyled
+} from 'components/Global';
 
 export const ImageWrapperStyled = styled.div`
   max-height: 50rem;
@@ -27,7 +31,7 @@ export const ImageWrapperStyled = styled.div`
   }
 `;
 
-export const ParagraphStyled = styled(Text)`
+export const ParagraphStyled = styled(TextStyled)`
   line-height: 24px;
 `;
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
+import { HeadingStyled } from 'components/Global';
 import { pxToEm } from 'utils/fns';
-import { HeadingStyled as Heading } from '../../../styles/utils';
 
 export const ButtonStyled = styled.button`
   background: none;
@@ -63,7 +63,7 @@ export const AccordionContainerStyled = styled.div`
     }
   }
 
-  & ${Heading} {
+  & ${HeadingStyled} {
     @media only screen and (max-width: ${pxToEm(750)}) {
       font-size: 1.9rem;
     }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CenterWrapperStyled } from '../../styles/utils';
+import { CenterWrapperStyled } from 'components/Global';
 import Contacts from './Contacts/Contacts';
 import Form from './Form/Form';
 import { ContainerStyled } from './ContactStyles';

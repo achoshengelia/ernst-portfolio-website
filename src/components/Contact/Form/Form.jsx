@@ -1,6 +1,7 @@
 import React from 'react';
 import { ErrorMessage, Formik } from 'formik';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { ButtonStyled } from 'components/Global';
 import {
   initialValues,
   maxLengthName,
@@ -11,7 +12,6 @@ import {
 } from 'constants/form';
 import {
   BottomWrapperStyled,
-  ButtonStyled,
   ErrorMessageStyled,
   FieldStyled,
   FieldWrapperStyled,
@@ -124,7 +124,9 @@ const Form = () => {
               </LabelStyled>
             </FieldWrapperStyled>
 
-            <ButtonStyled type="submit">{t('form.sendButton')}</ButtonStyled>
+            <ButtonStyled type="submit" isUppercase>
+              {t('form.sendButton')}
+            </ButtonStyled>
           </BottomWrapperStyled>
         </FormStyled>
       )}

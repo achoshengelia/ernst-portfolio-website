@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { navigate } from 'gatsby';
 import { Link, useTranslation, useI18next } from 'gatsby-plugin-react-i18next';
-import useWindowDimensions from 'hooks/useWindowDimensions';
-import { headerItems } from 'constants/header';
 import Menu from 'components/Header/Menu/Menu';
 import Hamburger from 'components/Header/Hamburger/Hamburger';
+import useWindowDimensions from 'hooks/useWindowDimensions';
+import { headerItems } from 'constants/header';
+import { customScreenMD } from 'constants/global';
 import { scrollTo, slugify } from 'utils/fns';
+import { GlobalContext } from 'context/GlobalContext';
 import {
   ContainerHeaderStyled,
   ContainerNavStyled,
@@ -14,11 +16,12 @@ import {
   NavListItemStyled,
   NavListStyled
 } from './HeaderStyles';
-import { pages } from 'constants/global';
 
-const customScreenMD = 820;
+const customScreenXS = 280;
 
 const Header = () => {
+  const { isIndexPage, showLanding, setShowLanding } =
+    useContext(GlobalContext);
   const { width } = useWindowDimensions();
   const { t } = useTranslation('header');
   const { originalPath } = useI18next();
@@ -29,12 +32,14 @@ const Header = () => {
   };
 
   const handleNavigate = item => {
-    const isNotHomePage =
-      originalPath.includes(pages.imprint) ||
-      originalPath.includes(pages.privacy);
+    setShowLanding(false);
 
-    if (isNotHomePage) {
-      navigate(`/#${slugify(t(item))}`);
+    if (!item) {
+      return window.scrollTo(0, 0);
+    }
+
+    if (!isIndexPage) {
+      navigate(!item ? '/' : `/#${slugify(t(item))}`);
 
       return setTimeout(() => scrollTo(item), 10);
     }
@@ -47,8 +52,12 @@ const Header = () => {
     <ContainerHeaderStyled>
       <ContainerNavStyled as="nav">
         <NavListStyled>
-          {!isOpen ? (
-            <NavListItemStyled isMain>
+          {!isOpen && width > customScreenXS ? (
+            <NavListItemStyled
+              isMain
+              onClick={() => handleNavigate('')}
+              showLanding={showLanding}
+            >
               <Link to="/">
                 Dr. Ernst {width > customScreenMD ? 'Sebastian' : 'S.'}{' '}
                 Gassebner
@@ -59,7 +68,7 @@ const Header = () => {
           {width > customScreenMD ? (
             headerItems.map(item =>
               isLanguageItem(item) ? (
-                <NavListItemStyled key={item}>
+                <NavListItemStyled key={item} showLanding={showLanding}>
                   <LangLinkStyled
                     key={item}
                     to={originalPath}
@@ -72,6 +81,7 @@ const Header = () => {
                 <NavListItemStyled
                   key={item}
                   onClick={() => handleNavigate(item)}
+                  showLanding={showLanding}
                 >
                   <Link key={item} to={`/#${slugify(t(item))}`}>
                     {t(item)}

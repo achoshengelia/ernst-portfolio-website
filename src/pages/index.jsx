@@ -1,21 +1,22 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from 'components/Layout/Layout';
+import Landing from 'components/Landing/Landing';
 import Work from 'components/Work/Work';
 import Projects from 'components/Projects/Projects';
 import About from 'components/About/About';
 import Contact from 'components/Contact/Contact';
-import SEO from 'components/SEO/SEO';
+import Seo from 'components/SEO/SEO';
 
 const HomePage = () => {
   return (
-    <Layout>
-      <SEO />
+    <>
+      <Seo />
+      <Landing />
       <Work />
       <Projects />
       <About />
       <Contact />
-    </Layout>
+    </>
   );
 };
 

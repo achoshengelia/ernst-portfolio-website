@@ -1,6 +1,8 @@
 export const pxToEm = pixels => pixels / 16 + 'em';
 
 export const scrollTo = id => {
+  if (!id) return window.scrollTo(0, 0);
+
   const element = document.getElementById(id);
   const headerOffset = id === 'contact' ? 60 : 120;
   const elementPosition = element?.getBoundingClientRect().top;

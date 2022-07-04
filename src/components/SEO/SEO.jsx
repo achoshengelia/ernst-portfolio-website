@@ -16,15 +16,13 @@ const query = graphql`
   }
 `;
 
-const SEO = ({ title = 'Home', description }) => {
+const Seo = ({ title = 'Home', description }) => {
   const { language } = useI18next();
 
   const { site } = useStaticQuery(query);
 
-  const metaTitle = title || `${title} | ${site?.siteMetadata.title}`;
+  const metaTitle = `${title} | ${site?.siteMetadata.title}`;
   const metaDescription = description || site.siteMetadata.description;
-
-  console.log(site.siteMetadata);
 
   return (
     <Helmet
@@ -65,4 +63,4 @@ const SEO = ({ title = 'Home', description }) => {
   );
 };
 
-export default SEO;
+export default Seo;

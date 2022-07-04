@@ -1,7 +1,7 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { referenceItems } from 'constants/about';
-import { CenterWrapperStyled, Heading } from '../../../styles/utils';
+import { CenterWrapperStyled, HeadingStyled } from 'components/Global';
 import {
   ListStyled,
   ListItemStyled,
@@ -17,9 +17,9 @@ const References = () => {
     <ContainerStyled>
       <CenterWrapperStyled>
         <MainWrapperStyled>
-          <Heading as="h2" $wrap>
+          <HeadingStyled as="h2" $wrap>
             {t('heading')}
-          </Heading>
+          </HeadingStyled>
           <ListContainer>
             <ListStyled>
               {referenceItems.map((item, i) =>

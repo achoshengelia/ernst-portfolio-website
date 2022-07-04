@@ -1,6 +1,51 @@
 import React from 'react';
 import styled from 'styled-components';
 
+export const ButtonStyled = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  width: 100%;
+  padding: 1em 0;
+  max-width: 15rem;
+  font-size: 1.8rem;
+  text-transform: ${({ isUppercase }) => (isUppercase ? 'uppercase' : null)};
+  border: 0.1rem solid ${props => props.theme.colors.background.form};
+  border-radius: 0.5rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  color: ${props => props.theme.colors.text.light};
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:hover {
+    color: ${props => props.theme.colors.primary.dark};
+
+    &::after {
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    border-radius: 0.3rem;
+    background: ${props => props.theme.colors.background.form};
+    transition: all 0.3s ease;
+  }
+`;
+
 export const CenterWrapperStyled = styled.div`
   height: 100%;
   width: 100%;
@@ -48,16 +93,6 @@ export const HeadingStyled = styled.span`
   word-wrap: ${({ $wrap }) => ($wrap ? 'break-word' : null)};
 `;
 
-export const Heading = props => {
-  const { as, children } = props;
-
-  return (
-    <HeadingStyled as={as} {...props}>
-      {children}
-    </HeadingStyled>
-  );
-};
-
 export const TextStyled = styled.span`
   color: ${({ theme, color }) =>
     color ? theme.colors.text[color] : theme.colors.text.main};
@@ -65,16 +100,6 @@ export const TextStyled = styled.span`
   font-size: ${({ size }) => (size ? size : '1.8rem')};
   text-transform: ${({ isUppercase }) => (isUppercase ? 'uppercase' : null)};
 `;
-
-export const Text = props => {
-  const { as, children } = props;
-
-  return (
-    <TextStyled as={as} {...props}>
-      {children}
-    </TextStyled>
-  );
-};
 
 const LineBreakWrapperStyled = styled.div`
   background-color: ${props => props.theme.colors.primary.dark};

@@ -41,7 +41,6 @@ const Menu = ({ handleToggle }) => {
                   handleToggle();
                 }}
               >
-                {console.log(item)}
                 {t(item)}
               </Link>
             </ListItemStyled>

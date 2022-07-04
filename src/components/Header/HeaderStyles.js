@@ -1,16 +1,24 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby-plugin-react-i18next';
-import { CenterWrapperStyled } from '../../styles/utils';
+import { CenterWrapperStyled } from 'components/Global';
 import { HamburgerWrapperStyled } from './Hamburger/HamburgerStyles';
+import { pxToEm } from 'utils/fns';
 
 export const LangLinkStyled = styled(Link)`
   text-transform: uppercase;
 `;
 
 export const NavListItemStyled = styled.li`
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, font-size 0.5s ease-in;
   font-weight: ${({ isMain }) => (isMain ? '600' : null)};
-  font-size: ${({ isMain }) => (isMain ? '1.8rem' : null)};
+  font-size: ${({ isMain, showLanding }) =>
+    isMain && showLanding
+      ? '2.2rem'
+      : !isMain && showLanding
+      ? '2rem'
+      : isMain
+      ? '1.8rem'
+      : '1.6rem'};
   cursor: pointer;
   text-transform: capitalize;
   position: relative;
@@ -30,11 +38,9 @@ export const NavListItemStyled = styled.li`
     transition: transform 0.3s ease-in-out;
   }
 
-  &:hover {
-    &::after {
-      transform: ${({ isMain }) => (isMain ? null : 'scale(1)')};
-      transform-origin: ${({ isMain }) => (isMain ? null : 'left')};
-    }
+  &:hover::after {
+    transform: ${({ isMain }) => (isMain ? null : 'scale(1)')};
+    transform-origin: ${({ isMain }) => (isMain ? null : 'left')};
   }
 
   &:first-child {
@@ -45,16 +51,60 @@ export const NavListItemStyled = styled.li`
     color: inherit;
   }
 
+  @media only screen and (max-width: ${pxToEm(1090)}) {
+    font-size: ${({ isMain, showLanding }) =>
+      isMain && showLanding
+        ? '2rem'
+        : !isMain && showLanding
+        ? '1.8rem'
+        : isMain
+        ? '1.8rem'
+        : '1.6rem'};
+  }
+
   @media ${props => props.theme.breakpoints.lg} {
-    font-size: ${({ isMain }) => (isMain ? '1.7rem' : null)};
+    font-size: ${({ isMain, showLanding }) =>
+      isMain && showLanding
+        ? '2rem'
+        : !isMain && showLanding
+        ? '1.8rem'
+        : isMain
+        ? '1.7rem'
+        : '1.6rem'};
   }
 
   @media ${props => props.theme.breakpoints.md} {
     font-size: ${({ isMain }) => (isMain ? '1.6rem' : null)};
+    font-size: ${({ isMain, showLanding }) =>
+      isMain && showLanding
+        ? '2rem'
+        : !isMain && showLanding
+        ? '1.8rem'
+        : isMain
+        ? '1.6rem'
+        : '1.6rem'};
   }
 
-  @media ${props => props.theme.breakpoints.sm} {
-    font-size: ${({ isMain }) => (isMain ? '1.5rem' : null)};
+  @media only screen and (max-width: ${pxToEm(500)}) {
+    font-size: ${({ isMain, showLanding }) =>
+      isMain && showLanding
+        ? '1.8rem'
+        : !isMain && showLanding
+        ? '1.8rem'
+        : isMain
+        ? '1.6rem'
+        : '1.6rem'};
+  }
+
+  @media only screen and (max-width: ${pxToEm(370)}) {
+    font-size: ${({ isMain, showLanding }) =>
+      isMain && showLanding
+        ? '1.65rem'
+        : !isMain && showLanding
+        ? '1.8rem'
+        : isMain
+        ? '1.6rem'
+        : '1.6rem'};
   }
 `;
 
@@ -73,13 +123,13 @@ export const NavListStyled = styled.ul`
 
   @media ${props => props.theme.breakpoints.lg} {
     & > * + * {
-      margin-left: 5rem;
+      margin-left: 4.2rem;
     }
   }
 
   @media ${props => props.theme.breakpoints.md} {
     & > * + * {
-      margin-left: 4rem;
+      margin-left: 3.5rem;
     }
   }
 `;

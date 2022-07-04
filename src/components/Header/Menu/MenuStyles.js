@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby-plugin-react-i18next';
+import { CenterWrapperStyled } from 'components/Global';
 import { pxToEm } from 'utils/fns';
-import { CenterWrapperStyled } from '../../../styles/utils';
+import { popIn } from 'styles/animations';
 
 export const LangLinkStyled = styled(Link)`
   text-transform: uppercase;
@@ -93,6 +94,7 @@ export const ContainerStyled = styled.nav`
   padding-left: 8rem;
   background-color: ${props => props.theme.colors.background.light};
   align-items: center;
+  animation: ${popIn} 0.1s ease-in;
 
   @media ${props => props.theme.breakpoints.sm} {
     padding-left: 6rem;

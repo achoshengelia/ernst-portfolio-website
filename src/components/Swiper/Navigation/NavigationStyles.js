@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { pxToEm } from 'utils/fns';
 import {
   CenterWrapperStyled,
   HeadingStyled,
   TextStyled
-} from '../../../styles/utils';
+} from 'components/Global';
+import { pxToEm } from 'utils/fns';
 
 export const ButtonStyled = styled.button`
   background: none;

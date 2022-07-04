@@ -6,3 +6,5 @@ export const pages = {
   imprint: 'imprint',
   privacy: 'privacy'
 };
+
+export const customScreenMD = 835;

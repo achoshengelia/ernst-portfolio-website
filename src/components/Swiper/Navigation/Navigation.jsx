@@ -1,7 +1,11 @@
 import React from 'react';
 import { useSwiper } from 'swiper/react';
+import {
+  CenterWrapperStyled,
+  HeadingStyled,
+  TextStyled
+} from 'components/Global';
 import { NextArrowIcon, PrevArrowIcon } from '../../../assets/icons';
-import { CenterWrapperStyled, Heading, Text } from '../../../styles/utils';
 import {
   ButtonStyled,
   ButtonsWrapperStyled,
@@ -16,10 +20,10 @@ const Navigation = ({ currentIndex, totalCount, title }) => {
     <ContainerStyled>
       <CenterWrapperStyled>
         <InfoWrapperStyled>
-          <Text size="1.8rem">{`${currentIndex}/${totalCount}`}</Text>
-          <Heading as="h2" size="1.8rem" $wrap noTransform>
+          <TextStyled size="1.8rem">{`${currentIndex}/${totalCount}`}</TextStyled>
+          <HeadingStyled as="h2" size="1.8rem" $wrap noTransform>
             {title}
-          </Heading>
+          </HeadingStyled>
         </InfoWrapperStyled>
 
         <ButtonsWrapperStyled>

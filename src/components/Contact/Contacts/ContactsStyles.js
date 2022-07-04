@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { HeadingStyled, TextStyled } from 'styles/utils';
+import { HeadingStyled, TextStyled } from 'components/Global';
 import { pxToEm } from 'utils/fns';
 
 export const ParagraphStyled = styled(TextStyled)`

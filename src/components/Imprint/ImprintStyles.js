@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { pxToEm } from 'utils/fns';
-import { HeadingStyled, TextStyled } from '../../styles/utils';
+import { HeadingStyled, TextStyled } from 'components/Global';
 
 export const ParagraphStyled = styled(TextStyled)`
   margin: 4rem 2rem 0rem 0;

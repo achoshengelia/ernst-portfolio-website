@@ -1,6 +1,6 @@
 import styled from 'styled-components';
+import { HeadingStyled } from 'components/Global';
 import { pxToEm } from 'utils/fns';
-import { HeadingStyled as Heading } from '../../../styles/utils';
 
 export const ListItemStyled = styled.li`
   font-size: 1.8rem;
@@ -76,14 +76,14 @@ export const ContainerStyled = styled.section`
   }
 
   @media ${props => props.theme.breakpoints.md} {
-    & ${Heading} {
+    & ${HeadingStyled} {
       padding: 0.5rem 0 1rem 0;
       font-weight: 500;
     }
   }
 
   @media only screen and (max-width: ${pxToEm(550)}) {
-    & ${Heading} {
+    & ${HeadingStyled} {
       font-size: 2rem;
     }
   }

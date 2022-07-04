@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { HeadingStyled } from 'components/Global';
 import { workItems } from 'constants/work';
 import { CloseIcon } from '../../../assets/icons';
-import { Heading } from '../../../styles/utils';
 import {
   ListStyled,
   ListItemStyled,
@@ -50,9 +50,9 @@ const Item = ({ item, index, openedIndex, setOpenedIndex }) => {
   return (
     <AccordionContainerStyled isOpen={isOpen} onClick={handleToggle}>
       <HeaderContainer>
-        <Heading as="h2" $wrap>
+        <HeadingStyled as="h2" $wrap>
           {t(heading)}
-        </Heading>
+        </HeadingStyled>
         <ButtonStyled>
           <CloseIcon />
         </ButtonStyled>
