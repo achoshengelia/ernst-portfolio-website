@@ -9,7 +9,7 @@
     "agreement": "Ich willige ein, dass diese Website meine übermittelten Informationen speichert, sodass meine Anfrage beantwortet werden kann. *",
     "required": "* Pflichtfeld",
     "sendButton": "senden",
-    "sentButton": "gesendet",
+    "loadingButton": "warte",
     "errors": {
       "isRequired": "Dieses Feld ist erforderlich!",
       "minLength": "Dieses Feld muss mindestens {{minLength}} Zeichen lang sein",
@@ -18,6 +18,16 @@
       "checkPhone": "Please enter a valid phone number!",
       "email": "Bitte geben Sie eine gültige Email-Adresse ein!",
       "mustAgree": "Um fortzufahren, müssen Sie den Bedingungen zustimmen"
+    },
+    "responses": {
+      "success": {
+        "message": "Nachricht wurde erfolgreich versendet! Danke für Ihre Anfrage. Ich melde mich bei Ihnen zeitnah zurück!",
+        "button": "neue nachricht senden"
+      },
+      "error": {
+        "message": "Nachricht konnte leider nicht versendet werden! Leider ist beim Senden der Nachricht etwas schief gegangen!",
+        "button": "nochmal versuchen"
+      }
     }
   }
 }

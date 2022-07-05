@@ -1,15 +1,118 @@
 import styled from 'styled-components';
 import { Form, Field } from 'formik';
-import { ButtonStyled } from 'components/Global';
+import { ButtonStyled, TextStyled } from 'components/Global';
 import { pxToEm } from 'utils/fns';
 import { popIn } from '../../../styles/animations';
+
+export const SubmitButtonStyled = styled(ButtonStyled)`
+  max-height: 5rem;
+  animation: ${({ isLoading }) => (isLoading ? `exit 2.2s infinite` : null)};
+  pointer-events: ${({ isLoading }) => (isLoading ? 'none' : null)};
+
+  &::after {
+    animation: ${({ isLoading }) =>
+      isLoading ? `exitAfter 2.2s infinite` : null};
+  }
+
+  @media only screen and (max-width: ${pxToEm(450)}) {
+    margin-bottom: 3rem;
+    font-size: 1.6rem;
+  }
+
+  @media only screen and (max-width: ${pxToEm(330)}) {
+    max-width: none;
+  }
+
+  @keyframes exit {
+    75% {
+      transform: scale(1);
+    }
+    85% {
+      transform: scale(1.05);
+    }
+    95% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(1);
+      color: ${props => props.theme.colors.primary.dark};
+    }
+  }
+
+  @keyframes exitAfter {
+    0% {
+      width: 0;
+      left: 0;
+    }
+    100% {
+      left: 0;
+      width: 100%;
+    }
+  }
+`;
+
+export const TextWrapperStyled = styled.div`
+  border: 1px solid ${props => props.theme.colors.background.form};
+  border-color: ${({ error, theme }) =>
+    error ? theme.colors.other.orangeBorder : null};
+  max-width: 70rem;
+  min-height: 18rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 4rem;
+
+  & ${TextStyled} {
+    color: ${({ error, theme }) =>
+      error ? theme.colors.other.orangeText : theme.colors.text.light};
+    line-height: 5rem;
+  }
+`;
+
+export const ResponseWrapperStyled = styled.div`
+  margin-left: 8rem;
+  margin-top: 5rem;
+  animation: ${popIn} 0.2s ease-in;
+
+  & ${SubmitButtonStyled} {
+    margin-top: 2rem;
+    max-width: 27rem;
+    margin-left: auto;
+  }
+
+  @media only screen and (max-width: ${pxToEm(850)}) {
+    margin-left: 0;
+
+    & ${TextWrapperStyled} {
+      max-width: none;
+    }
+  }
+
+  @media only screen and (max-width: ${pxToEm(450)}) {
+    margin-left: 0;
+
+    & ${TextWrapperStyled} {
+      padding: 1rem 2rem;
+
+      & ${TextStyled} {
+        font-size: 1.6rem;
+      }
+    }
+
+    & ${SubmitButtonStyled} {
+      margin-top: 2rem;
+      max-width: none;
+      width: 100%;
+      margin-left: auto;
+    }
+  }
+`;
 
 export const ErrorMessageStyled = styled.div`
   padding-left: 2rem;
   margin-bottom: 2rem;
   font-size: 1.2rem;
   color: ${props => props.theme.colors.response.error};
-
   animation: ${popIn} 0.2s ease-in;
 `;
 
@@ -42,6 +145,16 @@ export const FieldStyled = styled(Field)`
 
   &[type='number'] {
     -moz-appearance: textfield;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #d9d9d9 inset;
+    box-shadow: 0 0 0 30px #455d58 inset;
+    border-radius: 0.5rem;
+    color: red !important;
   }
 `;
 
@@ -108,19 +221,6 @@ export const BottomWrapperStyled = styled.div`
   margin: 3rem 0rem 0 0rem;
   color: ${props => props.theme.colors.text.light};
 
-  & > ${ButtonStyled} {
-    max-height: 5rem;
-
-    @media only screen and (max-width: ${pxToEm(450)}) {
-      margin-bottom: 3rem;
-      font-size: 1.6rem;
-    }
-
-    @media only screen and (max-width: ${pxToEm(330)}) {
-      max-width: none;
-    }
-  }
-
   & > ${FieldWrapperStyled} {
     display: flex;
     border: none;
@@ -159,6 +259,7 @@ export const FormStyled = styled(Form)`
   max-width: 70rem;
   height: max-content;
   margin: 6rem 1rem 0 9rem;
+  animation: ${popIn} 0.2s ease-in;
 
   @media only screen and (max-width: ${pxToEm(1000)}) {
     margin-left: 3rem;

@@ -28,7 +28,7 @@ const About = () => {
 
         <ImageWrapperStyled>
           <StaticImage
-            src="../../assets/images/ernst2.jpeg"
+            src="../../assets/images/ernst.jpg"
             alt="A picture of Ernst Gassebner"
             className="gatsby-image"
             placeholder="tracedSVG"

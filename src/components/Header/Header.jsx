@@ -49,7 +49,7 @@ const Header = () => {
   const isLanguageItem = item => item === 'language';
 
   return (
-    <ContainerHeaderStyled>
+    <ContainerHeaderStyled showLanding={showLanding}>
       <ContainerNavStyled as="nav">
         <NavListStyled>
           {!isOpen && width > customScreenXS ? (

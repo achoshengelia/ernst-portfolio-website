@@ -1,7 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
+import bgImg from 'assets/images/landing-bg.jpg';
 
 const GlobalStyles = createGlobalStyle`
-  *,*::after,*::before  {
+  *,
+  *::after,
+  *::before  {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
@@ -12,7 +15,9 @@ const GlobalStyles = createGlobalStyle`
     color: ${props => props.theme.colors.text.light};
   }
 
-  html, body, #root {
+  html,
+  body,
+  #root {
     min-height: 100vh;
   }
 
@@ -25,11 +30,11 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     font-family: ${props => props.theme.fonts.main};
     font-size: 1.6rem;
-    background: ${props => props.theme.colors.background.lighter};
+    background: ${({ theme }) => theme.colors.background.lighter};   
     color: ${props => props.theme.colors.text.main};
     cursor: default;
     text-rendering: optimizeSpeed;
-    overflow: ${({ showLanding }) => (showLanding ? 'hidden' : null)}
+    overflow: ${({ showLanding }) => (showLanding ? 'hidden' : null)};
   }
 
   #root {
@@ -50,7 +55,8 @@ const GlobalStyles = createGlobalStyle`
     border: none;
   }
 
-  input,textarea { 
+  input,
+  textarea { 
     &:focus{
       outline: none;
     } 

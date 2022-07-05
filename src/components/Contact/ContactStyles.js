@@ -16,5 +16,9 @@ export const ContainerStyled = styled.section`
     @media only screen and (max-width: ${pxToEm(850)}) {
       flex-direction: column;
     }
+
+    @media only screen and (max-width: ${pxToEm(450)}) {
+      padding-bottom: 5rem;
+    }
   }
 `;

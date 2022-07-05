@@ -15,10 +15,6 @@ export const ImageWrapperStyled = styled.div`
     height: 100%;
   }
 
-  & .image {
-    object-position: 50% 20%;
-  }
-
   @media only screen and (max-width: ${pxToEm(800)}) {
     margin: 5rem 0 0 0;
 

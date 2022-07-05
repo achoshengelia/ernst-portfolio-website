@@ -16,12 +16,14 @@ const query = graphql`
   }
 `;
 
-const Seo = ({ title = 'Home', description }) => {
+const Seo = ({ title, description }) => {
   const { language } = useI18next();
 
   const { site } = useStaticQuery(query);
 
-  const metaTitle = `${title} | ${site?.siteMetadata.title}`;
+  const metaTitle = title
+    ? `${title} | ${site?.siteMetadata.title}`
+    : site?.siteMetadata.title;
   const metaDescription = description || site.siteMetadata.description;
 
   return (

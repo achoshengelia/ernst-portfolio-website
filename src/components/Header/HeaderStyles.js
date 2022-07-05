@@ -141,7 +141,9 @@ export const ContainerHeaderStyled = styled.header`
   align-items: center;
   position: sticky;
   top: 0;
-  background-color: ${props => props.theme.colors.background.light};
+  background-color: ${props =>
+    props.showLanding ? 'transparent' : props.theme.colors.background.light};
+  transition: background-color 1s ease;
   width: 100%;
   min-height: 7rem;
   z-index: 9999;

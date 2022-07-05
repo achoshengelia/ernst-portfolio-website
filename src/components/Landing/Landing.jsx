@@ -3,7 +3,11 @@ import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { ButtonStyled } from 'components/Global';
 import { CenterWrapperStyled } from 'components/Global';
 import { GlobalContext } from 'context/GlobalContext';
-import { ContainerStyled, ParagraphStyled } from './LandingStyles';
+import {
+  ContainerStyled,
+  OverlayStyled,
+  ParagraphStyled
+} from './LandingStyles';
 
 const Landing = () => {
   const { showLanding, setShowLanding } = useContext(GlobalContext);
@@ -41,6 +45,7 @@ const Landing = () => {
       ref={landingRef}
     >
       <CenterWrapperStyled>
+        <OverlayStyled />
         <ParagraphStyled size="3rem">{t('paragraph')}</ParagraphStyled>
         <ButtonStyled onClick={() => setShowLanding(false)}>
           {t('button')}
