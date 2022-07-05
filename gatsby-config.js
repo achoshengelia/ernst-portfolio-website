@@ -17,7 +17,8 @@ module.exports = {
       `Weinbau`,
       `Beratung`
     ],
-    author: `Dr. Ernst Sebastian Gassebner`
+    author: `Dr. Ernst Sebastian Gassebner`,
+    url: 'https://ernstgassebner.com'
   },
   plugins: [
     {

@@ -2,6 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { useI18next } from 'gatsby-plugin-react-i18next';
+import image from 'assets/images/og-image.jpg';
 
 const query = graphql`
   {
@@ -11,6 +12,7 @@ const query = graphql`
         description
         keywords
         author
+        url
       }
     }
   }
@@ -37,6 +39,10 @@ const Seo = ({ title, description }) => {
           content: site.siteMetadata.keywords.join(', ')
         },
         {
+          name: 'og:url',
+          content: site.siteMetadata.url
+        },
+        {
           property: `og:title`,
           content: title
         },
@@ -47,6 +53,14 @@ const Seo = ({ title, description }) => {
         {
           property: `og:type`,
           content: `website`
+        },
+        {
+          property: 'og:image',
+          content: image
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image'
         },
         {
           name: `twitter:creator`,

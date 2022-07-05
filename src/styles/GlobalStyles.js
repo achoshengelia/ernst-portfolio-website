@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import bgImg from 'assets/images/landing-bg.jpg';
 
 const GlobalStyles = createGlobalStyle`
   *,
