@@ -1,6 +1,7 @@
 const React = require('react');
 const Layout = require('./src/components/Layout/Layout').default;
 const { GlobalContextProvider } = require('./src/context/GlobalContext');
+const { pages } = require('./src/constants/global');
 
 exports.shouldUpdateScroll = ({
   prevRouterProps,
@@ -17,8 +18,8 @@ exports.shouldUpdateScroll = ({
       !prevLocation?.pathname.includes('it'));
 
   const isIndexPage =
-    !location?.pathname.includes('imprint') &&
-    !location?.pathname.includes('privacy');
+    !location?.pathname.includes(pages.imprint) &&
+    !location?.pathname.includes(pages.privacy);
 
   if (isLanguageChange || isIndexPage) {
     return false;

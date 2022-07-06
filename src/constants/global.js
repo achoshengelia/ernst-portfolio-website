@@ -8,3 +8,5 @@ export const pages = {
 };
 
 export const customScreenMD = 835;
+
+export const isBrowser = typeof window !== 'undefined';

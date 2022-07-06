@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { isBrowser } from 'constants/global';
 
 const getWindowDimensions = () => {
   const { innerWidth: width, innerHeight: height } = window;
@@ -18,8 +19,14 @@ const useWindowDimensions = () => {
       setWindowDimensions(getWindowDimensions());
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    if (isBrowser) {
+      window.addEventListener('resize', handleResize);
+    }
+    return () => {
+      if (isBrowser) {
+        window.removeEventListener('resize', handleResize);
+      }
+    };
   }, []);
 
   return windowDimensions;

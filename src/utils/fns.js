@@ -1,17 +1,21 @@
+import { isBrowser } from 'constants/global';
+
 export const pxToEm = pixels => pixels / 16 + 'em';
 
 export const scrollTo = id => {
-  if (!id) return window.scrollTo(0, 0);
+  if (isBrowser) {
+    if (!id) return window.scrollTo(0, 0);
 
-  const element = document.getElementById(id);
-  const headerOffset = id === 'contact' ? 60 : 120;
-  const elementPosition = element?.getBoundingClientRect().top;
-  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    const element = document.getElementById(id);
+    const headerOffset = id === 'contact' ? 60 : 120;
+    const elementPosition = element?.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-  window.scrollTo({
-    top: offsetPosition,
-    behavior: 'smooth'
-  });
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
 };
 
 export const slugify = str =>

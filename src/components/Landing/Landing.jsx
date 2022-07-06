@@ -1,8 +1,9 @@
 import React, { useCallback, useContext, useEffect, useRef } from 'react';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { GlobalContext } from 'context/GlobalContext';
 import { ButtonStyled } from 'components/Global';
 import { CenterWrapperStyled } from 'components/Global';
-import { GlobalContext } from 'context/GlobalContext';
+import { isBrowser } from 'constants/global';
 import {
   ContainerStyled,
   OverlayStyled,
@@ -16,13 +17,13 @@ const Landing = () => {
   const { t } = useTranslation('landing');
 
   const handleScroll = useCallback(() => {
-    if (window.scrollY === 0) {
+    if (isBrowser && window.scrollY === 0) {
       setShowLanding(true);
     }
   }, [setShowLanding]);
 
   useEffect(() => {
-    if (showLanding && window.scrollY !== 0) {
+    if (isBrowser && showLanding && window.scrollY !== 0) {
       setTimeout(() => {
         landingRef?.current.scrollIntoView();
       }, 130);
@@ -30,11 +31,15 @@ const Landing = () => {
   }, [showLanding]);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    if (isBrowser) {
+      window.addEventListener('scroll', handleScroll);
+    }
     initialRender.current = false;
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      if (isBrowser) {
+        window.removeEventListener('scroll', handleScroll);
+      }
     };
   }, [initialRender, handleScroll]);
 

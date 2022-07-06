@@ -6,7 +6,7 @@ import Menu from 'components/Header/Menu/Menu';
 import Hamburger from 'components/Header/Hamburger/Hamburger';
 import useWindowDimensions from 'hooks/useWindowDimensions';
 import { headerItems } from 'constants/header';
-import { customScreenMD } from 'constants/global';
+import { customScreenMD, isBrowser } from 'constants/global';
 import { scrollTo, slugify } from 'utils/fns';
 import { GlobalContext } from 'context/GlobalContext';
 import {
@@ -34,7 +34,7 @@ const Header = () => {
   const handleNavigate = item => {
     setShowLanding(false);
 
-    if (!item) {
+    if (!item && isBrowser) {
       return window.scrollTo(0, 0);
     }
 
