@@ -2,12 +2,21 @@ import { isBrowser } from 'constants/global';
 
 export const pxToEm = pixels => pixels / 16 + 'em';
 
-export const scrollTo = id => {
+export const scrollTo = (id, showLanding) => {
+  const isContactSection = id === 'contact';
+
   if (isBrowser) {
     if (!id) return window.scrollTo(0, 0);
 
     const element = document.getElementById(id);
-    const headerOffset = id === 'contact' ? 60 : 120;
+    const headerOffset =
+      showLanding && isContactSection
+        ? 800
+        : showLanding
+        ? 900
+        : isContactSection
+        ? 60
+        : 120;
     const elementPosition = element?.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 

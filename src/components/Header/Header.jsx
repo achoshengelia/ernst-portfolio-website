@@ -43,7 +43,7 @@ const Header = () => {
 
       return setTimeout(() => scrollTo(item), 10);
     }
-    scrollTo(item);
+    scrollTo(item, showLanding);
   };
 
   const isLanguageItem = item => item === 'language';
