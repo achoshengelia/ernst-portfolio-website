@@ -166,7 +166,7 @@ const Form = () => {
               </FieldWrapperStyled>
 
               <SubmitButtonStyled type="submit" isUppercase isLoading={loading}>
-                {t(`form.${loading ? 'loading' : 'send'}Button`)}
+                {loading ? null : t('form.sendButton')}
               </SubmitButtonStyled>
             </BottomWrapperStyled>
           </FormStyled>

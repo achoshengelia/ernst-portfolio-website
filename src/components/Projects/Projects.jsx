@@ -14,7 +14,6 @@ const Projects = () => {
           {t('heading')}
         </MainHeadingStyled>
       </CenterWrapperStyled>
-
       <Swiper />
     </ContainerStyled>
   );

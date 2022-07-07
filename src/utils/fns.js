@@ -13,10 +13,10 @@ export const scrollTo = (id, showLanding) => {
       showLanding && isContactSection
         ? 800
         : showLanding
-        ? 900
+        ? 860
         : isContactSection
         ? 60
-        : 120;
+        : 100;
     const elementPosition = element?.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 

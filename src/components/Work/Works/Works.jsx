@@ -50,7 +50,7 @@ const Item = ({ item, index, openedIndex, setOpenedIndex }) => {
   return (
     <AccordionContainerStyled isOpen={isOpen} onClick={handleToggle}>
       <HeaderContainer>
-        <HeadingStyled as="h2" $wrap>
+        <HeadingStyled as="h2" $wrap noTransform>
           {t(heading)}
         </HeadingStyled>
         <ButtonStyled>

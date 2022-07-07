@@ -9,7 +9,6 @@
     "agreement": "Ich willige ein, dass diese Website meine übermittelten Informationen speichert, sodass meine Anfrage beantwortet werden kann. *",
     "required": "* Pflichtfeld",
     "sendButton": "senden",
-    "loadingButton": "warte",
     "errors": {
       "isRequired": "Dieses Feld ist erforderlich!",
       "minLength": "Dieses Feld muss mindestens {{minLength}} Zeichen lang sein",

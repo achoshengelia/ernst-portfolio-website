@@ -5,7 +5,8 @@ import { pxToEm } from 'utils/fns';
 import { popIn } from '../../../styles/animations';
 
 export const SubmitButtonStyled = styled(ButtonStyled)`
-  max-height: 5rem;
+  max-height: ${({ isLoading }) => (isLoading ? `0` : '5rem')};
+  padding: ${({ isLoading }) => (isLoading ? `.7rem 0` : null)};
   animation: ${({ isLoading }) => (isLoading ? `exit 2.2s infinite` : null)};
   pointer-events: ${({ isLoading }) => (isLoading ? 'none' : null)};
 
@@ -54,17 +55,19 @@ export const SubmitButtonStyled = styled(ButtonStyled)`
 export const TextWrapperStyled = styled.div`
   border: 1px solid ${props => props.theme.colors.background.form};
   border-color: ${({ error, theme }) =>
-    error ? theme.colors.other.orangeBorder : null};
+    error ? theme.colors.response.error : null};
   max-width: 70rem;
   min-height: 18rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 0.5rem;
+
   padding: 2rem 4rem;
 
   & ${TextStyled} {
     color: ${({ error, theme }) =>
-      error ? theme.colors.other.orangeText : theme.colors.text.light};
+      error ? theme.colors.response.error : theme.colors.text.light};
     line-height: 5rem;
   }
 `;

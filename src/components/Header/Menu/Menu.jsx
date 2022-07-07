@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import { useTranslation, useI18next } from 'gatsby-plugin-react-i18next';
+import { Link, useTranslation, useI18next } from 'gatsby-plugin-react-i18next';
 import { headerItems } from 'constants/header';
-import { scrollTo } from 'utils/fns';
+import { slugify } from 'utils/fns';
 import {
   ContainerListStyled,
   ContainerStyled,
@@ -10,7 +9,7 @@ import {
   LangLinkStyled
 } from './MenuStyles';
 
-const Menu = ({ handleToggle }) => {
+const Menu = ({ handleNavigate, isLanguageItem }) => {
   const { t } = useTranslation();
   const { originalPath } = useI18next('header');
 
@@ -18,31 +17,18 @@ const Menu = ({ handleToggle }) => {
     <ContainerStyled>
       <ContainerListStyled as="ul">
         {headerItems.map((item, i) =>
-          item === 'language' ? (
+          isLanguageItem(item) ? (
             <ListItemStyled key={`${item}-${i}`}>
-              <LangLinkStyled
-                key={item}
-                to={originalPath}
-                language={t(`${item}`)}
-              >
+              <LangLinkStyled to={originalPath} language={t(item)}>
                 {t(item)}
               </LangLinkStyled>
             </ListItemStyled>
           ) : (
             <ListItemStyled
               key={`${item}-${i}`}
-              onClick={() => scrollTo(`${item}`)}
+              onClick={() => handleNavigate(item, true)}
             >
-              <Link
-                key={item}
-                to={originalPath}
-                onClick={e => {
-                  e.preventDefault();
-                  handleToggle();
-                }}
-              >
-                {t(item)}
-              </Link>
+              <Link to={`/#${slugify(t(item))}`}>{t(item)}</Link>
             </ListItemStyled>
           )
         )}

@@ -31,12 +31,15 @@ const Header = () => {
     setIsOpen(prev => !prev);
   };
 
-  const handleNavigate = item => {
-    setShowLanding(false);
+  const handleNavigate = (item, isMenu) => {
+    if (isMenu) handleToggle();
 
     if (!item && isBrowser) {
+      setShowLanding(!showLanding);
       return window.scrollTo(0, 0);
     }
+
+    setShowLanding(false);
 
     if (!isIndexPage) {
       navigate(!item ? '/' : `/#${slugify(t(item))}`);
@@ -47,6 +50,11 @@ const Header = () => {
   };
 
   const isLanguageItem = item => item === 'language';
+
+  const menuProps = {
+    handleNavigate,
+    isLanguageItem
+  };
 
   return (
     <ContainerHeaderStyled showLanding={showLanding}>
@@ -66,26 +74,23 @@ const Header = () => {
           ) : null}
 
           {width > customScreenMD ? (
-            headerItems.map(item =>
+            headerItems.map((item, i) =>
               isLanguageItem(item) ? (
-                <NavListItemStyled key={item} showLanding={showLanding}>
-                  <LangLinkStyled
-                    key={item}
-                    to={originalPath}
-                    language={t(item)}
-                  >
+                <NavListItemStyled
+                  key={`${item}-${i}`}
+                  showLanding={showLanding}
+                >
+                  <LangLinkStyled to={originalPath} language={t(item)}>
                     {t(item)}
                   </LangLinkStyled>
                 </NavListItemStyled>
               ) : (
                 <NavListItemStyled
-                  key={item}
+                  key={`${item}-${i}`}
                   onClick={() => handleNavigate(item)}
                   showLanding={showLanding}
                 >
-                  <Link key={item} to={`/#${slugify(t(item))}`}>
-                    {t(item)}
-                  </Link>
+                  <Link to={`/#${slugify(t(item))}`}>{t(item)}</Link>
                 </NavListItemStyled>
               )
             )
@@ -96,10 +101,7 @@ const Header = () => {
       </ContainerNavStyled>
 
       {isOpen && width < customScreenMD
-        ? createPortal(
-            <Menu handleToggle={handleToggle} />,
-            document.getElementById('menu')
-          )
+        ? createPortal(<Menu {...menuProps} />, document.getElementById('menu'))
         : null}
     </ContainerHeaderStyled>
   );

@@ -22,10 +22,6 @@ const defaultTheme = {
     },
     response: {
       error: '#FFA800'
-    },
-    other: {
-      orangeBorder: '#C2B30B',
-      orangeText: '#D4BF00'
     }
   },
   breakpoints: {

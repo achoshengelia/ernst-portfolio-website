@@ -46,8 +46,6 @@ export const ParagraphStyled = styled(TextStyled)`
 `;
 
 export const ContainerStyled = styled.section`
-  /* background-color: ${props => props.theme.colors.primary.main}; */
-
   & > ${CenterWrapperStyled} {
     display: flex;
     justify-content: center;
@@ -56,9 +54,13 @@ export const ContainerStyled = styled.section`
     height: ${({ showLanding, isInitialRender }) =>
       showLanding && isInitialRender ? '100vh' : '0'};
     overflow: hidden;
-
     ${({ showLanding, isInitialRender }) =>
       isInitialRender ? null : showLanding ? slideDownMixin : slideUpMixin};
+
+    & > ${OverlayStyled} {
+      height: ${({ showLanding }) => (showLanding ? '100vh' : '0')};
+      transition: height 0.5s ease;
+    }
 
     & > ${ButtonStyled} {
       margin-top: 12rem;

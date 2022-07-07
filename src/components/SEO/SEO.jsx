@@ -20,7 +20,6 @@ const query = graphql`
 
 const Seo = ({ title, description }) => {
   const { language } = useI18next();
-
   const { site } = useStaticQuery(query);
 
   const metaTitle = title
