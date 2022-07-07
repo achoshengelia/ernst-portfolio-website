@@ -8,21 +8,22 @@ export const GlobalContext = createContext({
 });
 
 export const GlobalContextProvider = ({ children }) => {
-  const isIndexPage =
-    isBrowser &&
-    !window.location.pathname.includes(pages.imprint) &&
-    !window.location.pathname.includes(pages.privacy);
-  const [showLanding, setShowLanding] = useState(isIndexPage);
+  if (isBrowser) {
+    const isIndexPage =
+      !window.location.pathname.includes(pages.imprint) &&
+      !window.location.pathname.includes(pages.privacy);
+    const [showLanding, setShowLanding] = useState(isIndexPage);
 
-  const contextValue = {
-    isIndexPage,
-    showLanding,
-    setShowLanding
-  };
+    const contextValue = {
+      isIndexPage,
+      showLanding,
+      setShowLanding
+    };
 
-  return (
-    <GlobalContext.Provider value={contextValue}>
-      {children}
-    </GlobalContext.Provider>
-  );
+    return (
+      <GlobalContext.Provider value={contextValue}>
+        {children}
+      </GlobalContext.Provider>
+    );
+  }
 };
