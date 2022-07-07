@@ -1,8 +1,9 @@
-const React = require('react');
-const Layout = require('./src/components/Layout/Layout').default;
-const { GlobalContextProvider } = require('./src/context/GlobalContext');
+import React from 'react';
+import Layout from 'components/Layout/Layout';
+import { GlobalContextProvider } from './src/context/GlobalContext';
 
-exports.wrapPageElement = ({ element }) => {
+export const wrapPageElement = ({ element }) => {
+  if (!element.props.children?.props) return;
   const newElement = React.cloneElement(
     element, // I18nextProvider
     element.props,
@@ -20,6 +21,6 @@ exports.wrapPageElement = ({ element }) => {
   return newElement;
 };
 
-exports.wrapRootElement = ({ element }) => {
+export const wrapRootElement = ({ element }) => {
   return <GlobalContextProvider>{element}</GlobalContextProvider>;
 };

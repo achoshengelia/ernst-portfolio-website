@@ -10,8 +10,8 @@ export const GlobalContext = createContext({
 export const GlobalContextProvider = ({ children }) => {
   const isIndexPage =
     isBrowser &&
-    !window.location?.pathname.includes(pages.imprint) &&
-    !window.location?.pathname.includes(pages.privacy);
+    !window.location.pathname.includes(pages.imprint) &&
+    !window.location.pathname.includes(pages.privacy);
   const [showLanding, setShowLanding] = useState(isIndexPage);
 
   const contextValue = {

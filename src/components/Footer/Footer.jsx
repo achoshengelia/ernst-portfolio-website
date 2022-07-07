@@ -1,6 +1,7 @@
-import React from 'react';
-import { Link } from 'gatsby-plugin-react-i18next';
+import React, { useContext } from 'react';
+import { Link, useI18next } from 'gatsby-plugin-react-i18next';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { GlobalContext } from 'context/GlobalContext';
 import { CenterWrapperStyled } from 'components/Global';
 import { footerItems } from 'constants/footer';
 import { slugify, scrollTo } from 'utils/fns';
@@ -15,6 +16,14 @@ const isScrollTop = i => i === 1;
 
 const Footer = () => {
   const { t } = useTranslation('footer');
+  const { originalPath } = useI18next();
+  const { isIndexPage, showLanding, setShowLanding } =
+    useContext(GlobalContext);
+
+  const handleClick = () => {
+    if (isIndexPage) setShowLanding(!showLanding);
+    scrollTo();
+  };
 
   return (
     <ContainerStyled>
@@ -29,7 +38,7 @@ const Footer = () => {
               i === 0 ? null : (
                 <FooterListItemStyled key={item}>
                   {isScrollTop(i) ? (
-                    <Link to="/" onClick={scrollTo}>
+                    <Link to={originalPath} onClick={handleClick}>
                       <ArrowWrapperStyled>↑</ArrowWrapperStyled> {t(item)}
                     </Link>
                   ) : (
