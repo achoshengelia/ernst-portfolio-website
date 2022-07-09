@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import { isBrowser } from 'constants/global';
 import { getIsIndexPage } from 'utils/fns';
 
 export const GlobalContext = createContext({
@@ -13,6 +14,8 @@ export const GlobalContextProvider = ({ children }) => {
     showLanding,
     setShowLanding
   };
+
+  if (!isBrowser) return null;
 
   return (
     <GlobalContext.Provider value={contextValue}>

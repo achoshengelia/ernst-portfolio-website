@@ -21,11 +21,11 @@
     "responses": {
       "success": {
         "message": "Nachricht wurde erfolgreich versendet! Danke für Ihre Anfrage. Ich melde mich bei Ihnen zeitnah zurück!",
-        "button": "neue nachricht senden"
+        "button": "Neue Nachricht senden"
       },
       "error": {
         "message": "Nachricht konnte leider nicht versendet werden! Leider ist beim Senden der Nachricht etwas schief gegangen!",
-        "button": "nochmal versuchen"
+        "button": "Nochmal versuchen"
       }
     }
   }

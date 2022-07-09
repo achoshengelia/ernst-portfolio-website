@@ -36,6 +36,10 @@ export const slugify = str =>
 
 export const getIsIndexPage = () => {
   if (isBrowser) {
-    return !window.location.pathname.split('/')[1];
+    const urlArr = window.location.pathname.split('/');
+    const filterLang = urlArr.filter(item => item !== 'it');
+    const isIndexPage = filterLang.every(item => !item);
+
+    return isIndexPage;
   }
 };

@@ -9,15 +9,24 @@
     "agreement": "Acconsento che questo sito web memorizzi le informazioni da me inviate in modo che la mia richiesta possa essere soddisfatta. *",
     "required": "* campo obbligatorio",
     "sendButton": "invia",
-    "sentButton": "inviato",
     "errors": {
-      "isRequired": "Dieses Feld ist erforderlich!",
-      "minLength": "Dieses Feld muss mindestens {{minLength}} Zeichen lang sein",
-      "maxLength": "Dieses Feld darf maximal {{maxLength}} Zeichen lang sein",
-      "checkLatin": "Bitte geben sie ausschließlich lateinische Buchstaben (a-z) ein",
-      "checkPhone": "Please enter a valid phone number!",
-      "email": "Bitte geben Sie eine gültige Email-Adresse ein!",
-      "mustAgree": "Um fortzufahren, müssen Sie den Bedingungen zustimmen"
+      "isRequired": "Questo campo è obbligatorio!",
+      "minLength": "Questo campo deve essere almeno {{minLength}} caratteri lunghi",
+      "maxLength": "Questo campo può avere un massimo di {{maxLength}} caratteri lunghi",
+      "checkLatin": "Si prega di inserire solo lettere latine (a-z)",
+      "checkPhone": "Inserisci un numero di telefono valido!",
+      "email": "Inserisci un indirizzo email valido!",
+      "mustAgree": "Per continuare, è necessario accettare i termini"
+    },
+    "responses": {
+      "success": {
+        "message": "Il messaggio è stato inviato con successo! Grazie per la sua richiesta. Vi risponderò tempestivamente!",
+        "button": "Invia nuovo messaggio"
+      },
+      "error": {
+        "message": "Purtroppo non è stato possibile inviare questo messaggio! Qualcosa è andato storto durante l'invio del messaggio!",
+        "button": "Riprova"
+      }
     }
   }
 }
