@@ -43,6 +43,19 @@ export const ParagraphStyled = styled(TextStyled)`
     max-width: 60rem;
     font-size: 2.5rem;
   }
+
+  @media only screen and (max-width: ${pxToEm(480)}) {
+    max-width: none;
+  }
+
+  @media only screen and (max-width: ${pxToEm(440)}) {
+    font-size: 2.3rem;
+    padding: 0;
+  }
+
+  @media ${props => props.theme.breakpoints.xs} {
+    font-size: 2rem;
+  }
 `;
 
 export const ContainerStyled = styled.section`
@@ -67,6 +80,28 @@ export const ContainerStyled = styled.section`
       max-width: 35rem;
       font-size: 2.2rem;
       border-width: 0.2rem;
+    }
+
+    @media only screen and (max-width: ${pxToEm(480)}) {
+      & > ${ButtonStyled} {
+        margin-top: 6rem;
+      }
+    }
+
+    @media only screen and (max-width: ${pxToEm(440)}) {
+      & > ${ButtonStyled} {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media ${props => props.theme.breakpoints.xs} {
+      & > ${ButtonStyled} {
+        font-size: 2rem;
+      }
+    }
+
+    @media only screen and (max-width: ${pxToEm(280)}) {
+      padding-bottom: 6rem;
     }
   }
 `;

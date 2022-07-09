@@ -4,7 +4,7 @@ import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { GlobalContext } from 'context/GlobalContext';
 import { CenterWrapperStyled } from 'components/Global';
 import { footerItems } from 'constants/footer';
-import { slugify, scrollTo } from 'utils/fns';
+import { slugify, scrollTo, getIsIndexPage } from 'utils/fns';
 import {
   ArrowWrapperStyled,
   ContainerStyled,
@@ -17,8 +17,9 @@ const isScrollTop = i => i === 1;
 const Footer = () => {
   const { t } = useTranslation('footer');
   const { originalPath } = useI18next();
-  const { isIndexPage, showLanding, setShowLanding } =
-    useContext(GlobalContext);
+  const { showLanding, setShowLanding } = useContext(GlobalContext);
+
+  const isIndexPage = getIsIndexPage();
 
   const handleClick = () => {
     if (isIndexPage) setShowLanding(!showLanding);

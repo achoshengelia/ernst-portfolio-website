@@ -33,3 +33,9 @@ export const slugify = str =>
     .trim()
     .replace(/[\s_-]+/g, '-')
     .replace(/^-+|-+$/g, '');
+
+export const getIsIndexPage = () => {
+  if (isBrowser) {
+    return !window.location.pathname.split('/')[1];
+  }
+};

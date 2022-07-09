@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react';
 import { isBrowser } from 'constants/global';
 
-let defaultHeight;
-let defaultWidth;
-
-if (isBrowser) {
-  defaultHeight = window.innerHeight;
-  defaultWidth = window.innerWidth;
-}
-
 const getWindowDimensions = () => {
+  let defaultHeight;
+  let defaultWidth;
+
+  if (isBrowser) {
+    defaultHeight = window.innerHeight;
+    defaultWidth = window.innerWidth;
+  }
   return {
     width: defaultWidth,
     height: defaultHeight

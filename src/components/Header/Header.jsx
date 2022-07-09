@@ -7,7 +7,7 @@ import Hamburger from 'components/Header/Hamburger/Hamburger';
 import useWindowDimensions from 'hooks/useWindowDimensions';
 import { headerItems } from 'constants/header';
 import { customScreenMD } from 'constants/global';
-import { scrollTo, slugify } from 'utils/fns';
+import { getIsIndexPage, scrollTo, slugify } from 'utils/fns';
 import { GlobalContext } from 'context/GlobalContext';
 import {
   ContainerHeaderStyled,
@@ -20,12 +20,12 @@ import {
 const customScreenXS = 280;
 
 const Header = () => {
-  const { isIndexPage, showLanding, setShowLanding } =
-    useContext(GlobalContext);
+  const { showLanding, setShowLanding } = useContext(GlobalContext);
   const { width } = useWindowDimensions();
   const { t } = useTranslation('header');
   const { originalPath } = useI18next();
   const [isOpen, setIsOpen] = useState(false);
+  const isIndexPage = getIsIndexPage();
 
   const handleToggle = () => {
     setIsOpen(prev => !prev);

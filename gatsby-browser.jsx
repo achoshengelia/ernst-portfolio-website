@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from 'components/Layout/Layout';
 import { GlobalContextProvider } from './src/context/GlobalContext';
-import { pages } from './src/constants/global';
+import { getIsIndexPage } from 'utils/fns';
 
 export const shouldUpdateScroll = ({
   prevRouterProps,
@@ -17,9 +17,7 @@ export const shouldUpdateScroll = ({
     (location.pathname.includes('it') &&
       !prevLocation?.pathname.includes('it'));
 
-  const isIndexPage =
-    !location?.pathname.includes(pages.imprint) &&
-    !location?.pathname.includes(pages.privacy);
+  const isIndexPage = getIsIndexPage();
 
   if (isLanguageChange || isIndexPage) {
     return false;
