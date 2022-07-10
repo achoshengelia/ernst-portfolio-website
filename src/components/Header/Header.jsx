@@ -44,7 +44,7 @@ const Header = () => {
     if (!isIndexPage) {
       navigate(!item ? '/' : `/#${slugify(t(item))}`);
 
-      return setTimeout(() => scrollTo(item), 10);
+      return setTimeout(() => scrollTo(item), 20);
     }
     scrollTo(item, showLanding);
   };
