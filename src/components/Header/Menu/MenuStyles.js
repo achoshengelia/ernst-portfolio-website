@@ -29,10 +29,12 @@ export const ListItemStyled = styled.li`
     transition: transform 0.3s ease-in-out;
   }
 
-  &:hover {
-    &::after {
-      transform: scale(1);
-      transform-origin: left;
+  @media (hover: hover) {
+    &:hover {
+      &::after {
+        transform: scale(1);
+        transform-origin: left;
+      }
     }
   }
 
@@ -76,9 +78,11 @@ export const ContainerListStyled = styled(CenterWrapperStyled)`
     transform-origin: right;
   }
 
-  &:hover:after {
-    transform: scale(1);
-    transform-origin: left;
+  @media (hover: hover) {
+    &:hover:after {
+      transform: scale(1);
+      transform-origin: left;
+    }
   }
 `;
 

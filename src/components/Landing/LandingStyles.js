@@ -94,14 +94,24 @@ export const ContainerStyled = styled.section`
       }
     }
 
+    @media only screen and (max-width: ${pxToEm(400)}) {
+      padding-bottom: 10rem;
+
+      & > ${ButtonStyled} {
+        margin-top: 3rem;
+      }
+    }
+
     @media ${props => props.theme.breakpoints.xs} {
+      padding-bottom: 15rem;
+
       & > ${ButtonStyled} {
         font-size: 2rem;
       }
     }
 
     @media only screen and (max-width: ${pxToEm(280)}) {
-      padding-bottom: 6rem;
+      padding-bottom: 17rem;
     }
   }
 `;

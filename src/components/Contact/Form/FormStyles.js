@@ -192,8 +192,10 @@ export const RadioWrapperStyled = styled.div`
       transform: rotate(-45deg);
     }
 
-    &:hover::after {
-      opacity: 0.5;
+    @media (hover: hover) {
+      &:hover::after {
+        opacity: 0.5;
+      }
     }
   }
 

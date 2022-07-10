@@ -14,8 +14,10 @@ export const ButtonStyled = styled.button`
   align-items: center;
   opacity: 0.7;
 
-  &:hover {
-    opacity: 1;
+  @media (hover: hover) {
+    &:hover {
+      opacity: 1;
+    }
   }
 `;
 

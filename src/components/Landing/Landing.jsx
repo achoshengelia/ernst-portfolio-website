@@ -32,6 +32,7 @@ const Landing = () => {
 
   useEffect(() => {
     if (isBrowser) {
+      window.scrollTo(0, 0);
       window.addEventListener('scroll', handleScroll);
     }
     initialRender.current = false;

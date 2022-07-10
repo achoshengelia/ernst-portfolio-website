@@ -11,9 +11,11 @@ export const FooterListItemStyled = styled.li`
   font-size: 1.4rem;
   margin-left: ${({ isFirstChild }) => (isFirstChild ? null : '5rem')};
 
-  &:hover {
-    ${ArrowWrapperStyled} {
-      transform: translateY(-15%);
+  @media (hover: hover) {
+    &:hover {
+      ${ArrowWrapperStyled} {
+        transform: translateY(-15%);
+      }
     }
   }
 
@@ -66,4 +68,8 @@ export const ContainerStyled = styled.footer`
   color: ${props => props.theme.colors.text.light};
   min-height: 10rem;
   padding: 3rem 0;
+
+  @media ${props => props.theme.breakpoints.sm} {
+    padding-top: 2rem;
+  }
 `;

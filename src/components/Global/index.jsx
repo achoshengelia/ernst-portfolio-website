@@ -23,12 +23,14 @@ export const ButtonStyled = styled.button`
     transform: scale(0.98);
   }
 
-  &:hover {
-    color: ${props => props.theme.colors.primary.dark};
+  @media (hover: hover) {
+    &:hover {
+      color: ${props => props.theme.colors.primary.dark};
 
-    &::after {
-      left: 0;
-      width: 100%;
+      &::after {
+        left: 0;
+        width: 100%;
+      }
     }
   }
 

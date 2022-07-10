@@ -38,9 +38,11 @@ export const NavListItemStyled = styled.li`
     transition: transform 0.3s ease-in-out;
   }
 
-  &:hover::after {
-    transform: ${({ isMain }) => (isMain ? null : 'scale(1)')};
-    transform-origin: ${({ isMain }) => (isMain ? null : 'left')};
+  @media (hover: hover) {
+    &:hover::after {
+      transform: ${({ isMain }) => (isMain ? null : 'scale(1)')};
+      transform-origin: ${({ isMain }) => (isMain ? null : 'left')};
+    }
   }
 
   &:first-child {

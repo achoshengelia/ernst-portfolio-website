@@ -6,6 +6,7 @@ import GlobalStyles from '../GlobalStyles';
 
 const Theme = ({ children }) => {
   const { showLanding } = useContext(GlobalContext);
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyles showLanding={showLanding} />
