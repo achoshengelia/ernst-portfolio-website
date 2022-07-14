@@ -2,7 +2,6 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { useI18next } from 'gatsby-plugin-react-i18next';
-import image from 'assets/images/og-image.jpg';
 
 const query = graphql`
   {
@@ -55,11 +54,17 @@ const Seo = ({ title, description }) => {
         },
         {
           property: 'og:image',
-          content: image
+          content:
+            'https://res.cloudinary.com/dqfcbw5tz/image/upload/v1657816980/Ernst/og-image_k310kn.jpg'
         },
         {
           name: 'twitter:card',
           content: 'summary_large_image'
+        },
+        {
+          name: 'twitter:image',
+          content:
+            'https://res.cloudinary.com/dqfcbw5tz/image/upload/v1657816980/Ernst/og-image_k310kn.jpg'
         },
         {
           name: `twitter:creator`,

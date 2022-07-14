@@ -49,12 +49,12 @@ export const ParagraphStyled = styled(TextStyled)`
   }
 
   @media only screen and (max-width: ${pxToEm(440)}) {
-    font-size: 2.3rem;
+    font-size: 2rem;
     padding: 0;
   }
 
   @media ${props => props.theme.breakpoints.xs} {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 `;
 
@@ -90,7 +90,7 @@ export const ContainerStyled = styled.section`
 
     @media only screen and (max-width: ${pxToEm(440)}) {
       & > ${ButtonStyled} {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
     }
 
@@ -106,7 +106,7 @@ export const ContainerStyled = styled.section`
       padding-bottom: 15rem;
 
       & > ${ButtonStyled} {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
     }
 
