@@ -5,11 +5,14 @@ import defaultTheme from './default';
 import GlobalStyles from '../GlobalStyles';
 
 const Theme = ({ children }) => {
-  const { showLanding } = useContext(GlobalContext);
+  const { showLanding, overflowHidden } = useContext(GlobalContext);
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <GlobalStyles showLanding={showLanding} />
+      <GlobalStyles
+        showLanding={showLanding}
+        overflowHidden={overflowHidden || showLanding}
+      />
       {children}
     </ThemeProvider>
   );

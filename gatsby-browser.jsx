@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from 'components/Layout/Layout';
-import { GlobalContextProvider } from './src/context/GlobalContext';
 import { getIsIndexPage } from 'utils/fns';
+import { GlobalContextProvider } from 'context/GlobalContext';
 
 export const shouldUpdateScroll = ({
   prevRouterProps,
@@ -27,7 +27,7 @@ export const shouldUpdateScroll = ({
 };
 
 export const wrapPageElement = ({ element }) => {
-  if (!element.props.children?.props) return;
+  if (!element.props.children?.props) return null;
   const newElement = React.cloneElement(
     element, // I18nextProvider
     element.props,

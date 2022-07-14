@@ -33,7 +33,7 @@ const GlobalStyles = createGlobalStyle`
     color: ${props => props.theme.colors.text.main};
     cursor: default;
     text-rendering: optimizeSpeed;
-    overflow: ${({ showLanding }) => (showLanding ? 'hidden' : null)};
+    overflow: ${({ overflowHidden }) => (overflowHidden ? 'hidden' : null)};
   }
 
   #root {
