@@ -1,15 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import NotFound from 'components/NotFound/NotFound';
-import Seo from 'components/SEO/SEO';
 
 const ErrorPage = () => {
-  return (
-    <>
-      <Seo title="Error" />
-      <NotFound />
-    </>
-  );
+  return <NotFound />;
 };
 
 export default ErrorPage;

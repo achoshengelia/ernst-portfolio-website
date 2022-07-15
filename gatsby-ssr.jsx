@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from 'components/Layout/Layout';
 import { GlobalContextProvider } from 'context/GlobalContext';
+import Theme from 'styles/themes/Theme';
 
 export const wrapPageElement = ({ element }) => {
   if (!element.props.children?.props) return null;
@@ -22,5 +23,9 @@ export const wrapPageElement = ({ element }) => {
 };
 
 export const wrapRootElement = ({ element }) => {
-  return <GlobalContextProvider>{element}</GlobalContextProvider>;
+  return (
+    <GlobalContextProvider>
+      <Theme>{element}</Theme>
+    </GlobalContextProvider>
+  );
 };

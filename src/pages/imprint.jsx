@@ -1,18 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
 import Imprint from 'components/Imprint/Imprint';
-import Seo from 'components/SEO/SEO';
 
 const ImprintPage = () => {
-  const { t } = useTranslation('imprint');
-
-  return (
-    <>
-      <Seo title={t('heading')} />
-      <Imprint />
-    </>
-  );
+  return <Imprint />;
 };
 
 export default ImprintPage;

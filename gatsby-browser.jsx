@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from 'components/Layout/Layout';
 import { getIsIndexPage } from 'utils/fns';
 import { GlobalContextProvider } from 'context/GlobalContext';
+import Theme from 'styles/themes/Theme';
 
 export const shouldUpdateScroll = ({
   prevRouterProps,
@@ -46,5 +47,9 @@ export const wrapPageElement = ({ element }) => {
 };
 
 export const wrapRootElement = ({ element }) => {
-  return <GlobalContextProvider>{element}</GlobalContextProvider>;
+  return (
+    <GlobalContextProvider>
+      <Theme>{element}</Theme>
+    </GlobalContextProvider>
+  );
 };
