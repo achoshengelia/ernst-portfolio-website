@@ -16,8 +16,13 @@ const GlobalStyles = createGlobalStyle`
 
   html,
   body,
-  #root {
+  #gatsby-focus-wrapper {
+    position: ${({ overflowHidden }) => (overflowHidden ? 'relative' : null)};;
     min-height: 100vh;
+    overflow: ${({ overflowHidden }) => (overflowHidden ? 'hidden' : null)};
+    touch-action: ${({ overflowHidden }) => (overflowHidden ? 'none' : null)};
+    -ms-touch-action: ${({ overflowHidden }) =>
+      overflowHidden ? 'none' : null};
   }
 
   html {
@@ -33,10 +38,9 @@ const GlobalStyles = createGlobalStyle`
     color: ${props => props.theme.colors.text.main};
     cursor: default;
     text-rendering: optimizeSpeed;
-    overflow: ${({ overflowHidden }) => (overflowHidden ? 'hidden' : null)};
   }
 
-  #root {
+  #gatsby-focus-wrapper {
     display: flex;
     flex-direction: column;
   }
