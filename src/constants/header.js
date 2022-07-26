@@ -1,1 +1,1 @@
-export const headerItems = ['work', 'projects', 'about', 'contact', 'language'];
+export const headerItems = ['work', 'about', 'contact', 'language'];

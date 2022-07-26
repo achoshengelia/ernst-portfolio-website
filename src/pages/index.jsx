@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Landing from 'components/Landing/Landing';
 import Work from 'components/Work/Work';
-import Projects from 'components/Projects/Projects';
 import About from 'components/About/About';
 import Contact from 'components/Contact/Contact';
 
@@ -11,7 +10,6 @@ const HomePage = () => {
     <>
       <Landing />
       <Work />
-      <Projects />
       <About />
       <Contact />
     </>

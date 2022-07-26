@@ -21,14 +21,12 @@
     "gatsby-plugin-sharp": "^4.17.0",
     "gatsby-plugin-styled-components": "^5.17.0",
     "gatsby-source-filesystem": "^4.17.0",
-    "gatsby-transformer-json": "^4.17.0",
     "gatsby-transformer-sharp": "^4.17.0",
     "i18next": "^21.8.11",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-i18next": "^11.17.3",
-    "styled-components": "^5.3.5",
-    "swiper": "^8.2.5"
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "gatsby-plugin-root-import": "^2.0.8"
