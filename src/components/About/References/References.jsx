@@ -17,7 +17,7 @@ const References = () => {
     <ContainerStyled>
       <CenterWrapperStyled>
         <MainWrapperStyled>
-          <HeadingStyled as="h2" $wrap>
+          <HeadingStyled as="h2" $wrap noTransform>
             {t('heading')}
           </HeadingStyled>
           <ListContainer>
