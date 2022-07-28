@@ -95,7 +95,7 @@ export const ContainerStyled = styled.section`
     }
 
     @media only screen and (max-width: ${pxToEm(400)}) {
-      padding-bottom: 10rem;
+      padding-bottom: ${({ showLanding }) => (showLanding ? '10rem' : null)};
 
       & > ${ButtonStyled} {
         margin-top: 3rem;
@@ -103,7 +103,7 @@ export const ContainerStyled = styled.section`
     }
 
     @media ${props => props.theme.breakpoints.xs} {
-      padding-bottom: 15rem;
+      padding-bottom: ${({ showLanding }) => (showLanding ? '15rem' : null)};
 
       & > ${ButtonStyled} {
         font-size: 1.8rem;
@@ -111,7 +111,7 @@ export const ContainerStyled = styled.section`
     }
 
     @media only screen and (max-width: ${pxToEm(280)}) {
-      padding-bottom: 17rem;
+      padding-bottom: ${({ showLanding }) => (showLanding ? '17rem' : null)};
     }
   }
 `;

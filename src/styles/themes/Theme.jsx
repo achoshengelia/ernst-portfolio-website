@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalContext } from 'context/GlobalContext';
-import defaultTheme from './default';
 import GlobalStyles from '../GlobalStyles';
+import defaultTheme from './default';
 
 const Theme = ({ children }) => {
   const { showLanding, overflowHidden } = useContext(GlobalContext);

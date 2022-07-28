@@ -14,7 +14,7 @@ export const MainWrapperStyled = styled.main`
 
   @media only screen and (max-width: ${pxToEm(400)}) {
     & > * + * {
-      margin-top: 5rem;
+      margin-top: 7rem;
     }
   }
 `;

@@ -6,13 +6,17 @@ export const workItems = [
       'list-item-1-2',
       'list-item-1-3',
       'list-item-1-4',
-      'list-item-1-5',
-      'list-item-1-6'
+      'list-item-1-5'
     ]
   },
   {
     heading: 'heading-2',
-    listItems: ['list-item-2-1', 'list-item-2-2', 'list-item-2-3']
+    listItems: [
+      'list-item-2-1',
+      'list-item-2-2',
+      'list-item-2-3',
+      'list-item-2-4'
+    ]
   },
   {
     heading: 'heading-3',

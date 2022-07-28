@@ -70,15 +70,16 @@ export const SubHeadingStyled = styled(HeadingStyled)`
 `;
 
 export const MainHeadingStyled = styled(HeadingStyled)`
-  @media only screen and (max-width: ${pxToEm(350)}) {
-    font-size: 2rem;
-    white-space: pre-wrap;
+  @media ${props => props.theme.breakpoints.sm} {
+    font-size: 2.4rem;
   }
 
   @media only screen and (max-width: ${pxToEm(370)}) {
     font-size: 2.2rem;
-    font-weight: 500;
-    white-space: pre-wrap;
+  }
+
+  @media only screen and (max-width: ${pxToEm(350)}) {
+    font-size: 2rem;
   }
 
   @media ${props => props.theme.breakpoints.xs} {
