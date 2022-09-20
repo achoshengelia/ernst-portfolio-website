@@ -25,7 +25,8 @@ export const OverlayStyled = styled.div`
       rgba(140, 189, 158, 0.85),
       rgba(140, 189, 158, 0.85)
     ),
-    url(${bgImg});
+    url(${bgImg}) no-repeat;
+  background-size: cover;
 `;
 
 export const ParagraphStyled = styled(TextStyled)`

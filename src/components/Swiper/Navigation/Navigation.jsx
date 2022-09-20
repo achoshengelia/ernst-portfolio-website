@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSwiper } from 'swiper/react';
 import {
   CenterWrapperStyled,
@@ -13,8 +14,9 @@ import {
   InfoWrapperStyled
 } from './NavigationStyles';
 
-const Navigation = ({ currentIndex, totalCount, title }) => {
+const Navigation = ({ currentIndex, totalCount }) => {
   const swiper = useSwiper();
+  const { t } = useTranslation(`slides`);
 
   return (
     <ContainerStyled>
@@ -22,7 +24,7 @@ const Navigation = ({ currentIndex, totalCount, title }) => {
         <InfoWrapperStyled>
           <TextStyled size="1.8rem">{`${currentIndex}/${totalCount}`}</TextStyled>
           <HeadingStyled as="h2" size="1.8rem" $wrap noTransform>
-            {title}
+            {t(`slide_${currentIndex}.title`)}
           </HeadingStyled>
         </InfoWrapperStyled>
 

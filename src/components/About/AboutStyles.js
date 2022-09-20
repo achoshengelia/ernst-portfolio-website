@@ -13,6 +13,10 @@ export const ImageWrapperStyled = styled.div`
   & .gatsby-image-wrapper {
     width: 100%;
     height: 100%;
+
+    & img {
+      border-radius: 0.5rem;
+    }
   }
 
   @media only screen and (max-width: ${pxToEm(800)}) {

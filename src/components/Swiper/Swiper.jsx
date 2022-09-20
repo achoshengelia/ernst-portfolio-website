@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { useTranslation } from 'react-i18next';
 import { EffectFade } from 'swiper';
 import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -14,13 +15,10 @@ const query = graphql`
     allSlidesJson {
       nodes {
         id
-        title
-        alt
         image {
           childImageSharp {
             gatsbyImageData(
               placeholder: TRACED_SVG
-              height: 600
               layout: FULL_WIDTH
               quality: 100
             )
@@ -34,6 +32,7 @@ const query = graphql`
 const Swiper = () => {
   const [realIndex, setRealIndex] = useState(0);
   const { allSlidesJson } = useStaticQuery(query);
+  const { t } = useTranslation('slides');
   const slides = allSlidesJson.nodes;
 
   const getCurrentIndex = () => {
@@ -41,14 +40,14 @@ const Swiper = () => {
     return realIndex + 1;
   };
 
-  const getTotalSlidesCount = slides => {
+  const getTotalSlidesCount = () => {
     const length = slides.length;
     if (length < 10) return `0${length}`;
     return length;
   };
 
-  const getTitle = () => {
-    return slides[realIndex].title;
+  const getAlt = () => {
+    return t(`slide_${getCurrentIndex()}.alt`);
   };
 
   return (
@@ -65,7 +64,7 @@ const Swiper = () => {
         <SwiperSlide key={slide.id}>
           <GatsbyImage
             image={getImage(slide.image)}
-            alt={slide?.alt}
+            alt={getAlt()}
             className="gatsby-image"
           />
         </SwiperSlide>
@@ -73,8 +72,7 @@ const Swiper = () => {
 
       <Navigation
         currentIndex={getCurrentIndex()}
-        totalCount={getTotalSlidesCount(slides)}
-        title={getTitle()}
+        totalCount={getTotalSlidesCount()}
       />
     </SwiperStyled>
   );

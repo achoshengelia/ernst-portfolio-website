@@ -12,7 +12,7 @@ export const SwiperStyled = styled(Swiper)`
   }
 
   & .gatsby-image {
-    max-height: 60rem;
+    max-height: 57rem;
 
     @media only screen and (max-width: ${pxToEm(980)}) {
       max-height: 50rem;

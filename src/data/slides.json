@@ -1,17 +1,23 @@
 [
   {
-    "title": "Seit 1998 Berater für Obst- und Weinbau für verschiedene Firmen (Agrevo, Aventis, Bayer, DuPont, Cheminova-FMC, Compo-Expert und L.Gobbi)",
-    "alt": "Ernst Gassebner",
     "image": "../assets/images/slider/slide_1.jpg"
   },
   {
-    "title": "Lösungsorientierte Fachberatung im Obst- und Weinbau gegen Feuerbrand, Schädlingen und Co",
-    "alt": "Feuerbrand bei Apfelbaum",
     "image": "../assets/images/slider/slide_2.jpg"
   },
   {
-    "title": "Schadensschätzungen an Kulturen",
-    "alt": "Schadensschaetzung von Kulturen",
     "image": "../assets/images/slider/slide_3.jpg"
+  },
+  {
+    "image": "../assets/images/slider/slide_4.jpg"
+  },
+  {
+    "image": "../assets/images/slider/slide_5.jpg"
+  },
+  {
+    "image": "../assets/images/slider/slide_6.jpg"
+  },
+  {
+    "image": "../assets/images/slider/slide_7.jpg"
   }
 ]
